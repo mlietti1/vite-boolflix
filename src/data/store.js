@@ -8,7 +8,8 @@ export const store = reactive({
     query: 'titanic',
     language: 'it-IT'
   },
-  moviesData: [],
-  seriesData: [],
+  type: '',
+  tv: [],
+  movie: [],
   isLoaded: false
 });

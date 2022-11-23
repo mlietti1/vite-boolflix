@@ -25,7 +25,6 @@ export default {
           query: store.paramsApi.query
         }})
       .then (result => {
-        store.moviesData = [];
         store[type] = result.data.results;
         console.log(result.data.results);
       })
@@ -33,18 +32,28 @@ export default {
         console.log(error);
       })
     },
+    startSearch(){
+      store.movie = [];
+      store.tv = [];
+      if(store.type === ''){
+        this.getMovie('movie');
+        this.getMovie('tv');
+      }else{
+        this.getMovie(store.type)
+      }
+
+    }
   },
   mounted(){
-    this.getMovie('movie');
-    this.getMovie('tv');
+    this.startSearch();
   }
 }
 </script>
 
 <template>
-  <AppHeader @search="getMovie('movie')" />
-  <AppMain title="Movies" type="movie"/>
-  <AppMain title="TV Series" type="tv"/>
+  <AppHeader @search="startSearch()" />
+  <AppMain v-if="store.movie.length > 0" title="Movies" type="movie"/>
+  <AppMain v-if="store.tv.length > 0" title="TV Series" type="tv"/>
 </template>
 
 <style lang="scss">

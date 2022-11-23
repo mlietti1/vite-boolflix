@@ -17,9 +17,13 @@ export default {
     <img class="m-3" src="logo-boolflix.png" alt="Boolflix">
     
     <nav class="d-flex m-3">
-      <input class="me-3 form-control" @keyup="$emit('search')" v-model.trim="store.paramsApi.query" type="text" placeholder="Search Movie or TV Show">
-      <select v-model="store.type" class="form-select" aria-label="Default select example">
-        <option value="" selected>All</option>
+      <input class="me-3 form-control" @keyup.enter="$emit('search')" v-model.trim="store.paramsApi.query" type="text" placeholder="Search Movie or TV Show">
+
+      <select 
+      v-model="store.type" 
+      @change="$emit('search')"
+      class="form-select" aria-label="Default select example">
+        <option selected value="">All</option>
         <option value="movie">Movies</option>
         <option value="tv">TV Series</option>
       </select>
