@@ -19,12 +19,11 @@ export default {
 </script>
 
 <template>
-  <div class="container"><h3>{{title}}</h3></div>
   <div class="container">
-    <div class="row-cols-xs-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6">
+    <h3>{{title}}</h3>
+    <div class="justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8">
       <AppCard v-for="card in store[type]" :key="card.id" :card="card"/>
     </div>
-
   </div>
 </template>
 

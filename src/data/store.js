@@ -11,5 +11,6 @@ export const store = reactive({
   type: '',
   tv: [],
   movie: [],
-  isLoaded: false
+  isLoaded: false,
+  imgPath: 'https://image.tmdb.org/t/p/w500'
 });
