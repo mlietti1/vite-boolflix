@@ -2,6 +2,10 @@
 import { store } from '../data/store';
 export default {
   name: 'AppMain',
+  props:{
+    title: String,
+    type: String
+  },
   data(){
     return{
       store
@@ -11,9 +15,10 @@ export default {
 </script>
 
 <template>
-  <div>
-    <ul v-for="movie in store.moviesData" :key="movie.id">
-      <li>{{movie.original_title}}</li>
+  <div class="container">
+    <h3>{{title}}</h3>
+    <ul>
+      <li v-for="card in store[type]" :key="card.id">card</li>
     </ul>
   </div>
 </template>
