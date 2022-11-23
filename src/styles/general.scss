@@ -5,6 +5,7 @@
 @import 'node_modules/flag-icons/css/flag-icons.min.css';
 
 body {
-  background-color: $primary-color;
+  background-image: linear-gradient(black, $primary-color 10%);
   color: white;
+  min-height: 100vh;
 }

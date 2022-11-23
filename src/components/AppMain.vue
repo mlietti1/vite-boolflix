@@ -20,8 +20,11 @@ export default {
 
 <template>
   <div class="container"><h3>{{title}}</h3></div>
-  <div class="container d-flex flex-wrap">
-    <AppCard v-for="card in store[type]" :key="card.id" :card="card"/>
+  <div class="container">
+    <div class="row-cols-xs-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6">
+      <AppCard v-for="card in store[type]" :key="card.id" :card="card"/>
+    </div>
+
   </div>
 </template>
 

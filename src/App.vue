@@ -18,8 +18,11 @@ export default {
     }
   },
   methods:{
-    getMovie(type){
-      axios.get(store.apiUrl + type, {
+    getMovie(type, isPopular = false){
+      let apiUrl;
+      if(isPopular) apiUrl = 'https://api.themoviedb.org/3/' + type + '/popular';
+      else apiUrl = store.apiUrl;
+      axios.get(apiUrl, {
         params: {
           api_key: store.paramsApi.key,
           query: store.paramsApi.query
@@ -45,7 +48,8 @@ export default {
     }
   },
   mounted(){
-    this.startSearch();
+    this.getMovie('movie', true);
+    this.getMovie('tv', true);
   }
 }
 </script>
