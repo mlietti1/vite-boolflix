@@ -21,13 +21,16 @@ export default {
 <template>
   <div class="container">
     <h3>{{title}}</h3>
-    <div class="justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8">
+    <div class="justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xl-6">
       <AppCard v-for="card in store[type]" :key="card.id" :card="card"/>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
+@use '../styles/partials/vars' as *;
+h3 {
+  margin: 2rem 0;
+}
 
 </style>
