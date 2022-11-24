@@ -99,6 +99,9 @@ export default {
     overflow: auto;
     transition: all 0.5s;
     font-size: 0.8rem;
+    .fa-star.fa-solid{
+      color: gold;
+    }
     .overview {
       overflow: auto;
     }
