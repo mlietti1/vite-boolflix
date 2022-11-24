@@ -21,7 +21,7 @@ export default {
     getMovie(type, isPopular = false){
       let apiUrl;
       if(isPopular) apiUrl = 'https://api.themoviedb.org/3/' + type + '/popular';
-      else apiUrl = store.apiUrl;
+      else apiUrl = store.apiUrl + type;
       axios.get(apiUrl, {
         params: {
           api_key: store.paramsApi.key,
@@ -56,6 +56,7 @@ export default {
 
 <template>
   <AppHeader @search="startSearch()" />
+  
   <AppMain v-if="store.movie.length > 0" title="Movies" type="movie"/>
   <AppMain v-if="store.tv.length > 0" title="TV Series" type="tv"/>
 </template>

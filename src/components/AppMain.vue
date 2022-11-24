@@ -19,18 +19,25 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <h3>{{title}}</h3>
-    <div class="justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xl-6">
-      <AppCard v-for="card in store[type]" :key="card.id" :card="card"/>
+  <main>
+
+    <div class="container">
+      <h3>{{title}}</h3>
+      <div class="justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xl-6">
+        <AppCard v-for="card in store[type]" :key="card.id" :card="card"/>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/vars' as *;
-h3 {
-  margin: 2rem 0;
+main{
+  background-color: $primary-color;
+  padding: 2rem 0;
+  h3 {
+    margin-bottom: 2rem;
+  }
 }
 
 </style>
